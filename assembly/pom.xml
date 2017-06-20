@@ -30,7 +30,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <assembly.name>livy-server-${project.version}</assembly.name>
+    <assembly.name>livy-server-${project.version}-ga1</assembly.name>
     <assembly.format>zip</assembly.format>
     <skipDeploy>true</skipDeploy>
   </properties>
