@@ -79,7 +79,8 @@ class SparkInterpreter(conf: SparkConf)
             .filterNot { u => Paths.get(u.toURI).getFileName.toString.startsWith("livy-") }
             // Some bad spark packages depend on the wrong version of scala-reflect. Blacklist it.
             .filterNot { u =>
-              Paths.get(u.toURI).getFileName.toString.contains("org.scala-lang_scala-reflect")
+              Paths.get(u.toURI).getFileName.toString.contains("org.scala-lang_scala-reflect") ||
+              Paths.get(u.toURI).getFileName.toString.contains("org.scala-lang.modules_scala-xml")
             }
 
           extraJarPath.foreach { p => debug(s"Adding $p to Scala interpreter's class path...") }
